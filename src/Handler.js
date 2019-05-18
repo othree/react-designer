@@ -67,9 +67,6 @@ class Handler extends Component {
         onMouseLeave={props.onMouseLeave}
         onDoubleClick={props.onDoubleClick}
         onMouseDown={this.onMouseDown.bind(this)}>
-          {props.canRotate &&
-            <RotateAnchor onMouseDown={props.onRotate}
-                          boundingBox={boundingBox} />}
           {props.canResize &&
             <ScaleAnchor onMouseDown={props.onResize}
                          boundingBox={boundingBox} />}

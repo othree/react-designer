@@ -569,15 +569,6 @@ class Designer extends Component {
             {this.renderSVG()}
           </div>
 
-          {/* Right Panel: Displays text, styling and sizing tools */}
-          {showPropertyPanel && (
-            <PanelList
-              id={this.props.id}
-              object={objectWithInitial}
-              onArrange={this.handleArrange.bind(this)}
-              onChange={this.handleObjectChange.bind(this)}
-              objectComponent={objectComponent} />
-          )}
         </div>
       </HotKeys>
     );

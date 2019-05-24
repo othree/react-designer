@@ -2,7 +2,7 @@
   "name": "@othree/react-designer",
   "version": "1.0.10",
   "description": "Easy to configure, lightweight, editable vector graphics in your react components.",
-  "main": "./lib/index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "node server.js",
     "deploy": "NODE_ENV=production webpack -p --config webpack.production.js",

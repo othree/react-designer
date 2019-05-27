@@ -76,8 +76,6 @@ class BezierEditor extends Component {
     let {moveX, moveY} = object;
     let {x, y} = mouse;
 
-    console.log('move', mode);
-
     let snapToInitialVertex = (
       this.isCollides(moveX, moveY, x, y)
     );
@@ -95,8 +93,6 @@ class BezierEditor extends Component {
     }
 
     if (mode === 'target') {
-      console.log('target', x, y);
-
       this.updateCurrentPath({
         x2: x,
         y2: y,
@@ -141,8 +137,6 @@ class BezierEditor extends Component {
   }
 
   onMouseDown(event) {
-    console.log('x');
-
     if (this.state.closePath) {
       return this.closePath();
     }
@@ -155,8 +149,6 @@ class BezierEditor extends Component {
     let {path} = this.props.object;
     let mouse = this.getMouseCoords(event);
     let currentPath = this.getCurrentPath();
-
-    console.log('down', mode);
 
     if (mode === 'target') {
       this.setState({
@@ -189,13 +181,10 @@ class BezierEditor extends Component {
       return this.closePath();
     }
 
-    console.log('up', mode);
-
     if (mode === 'source') {
       this.setState({
         mode: 'target'
       });
-      console.log(path);
       this.props.onUpdate({
         path: [
           {
@@ -222,7 +211,6 @@ class BezierEditor extends Component {
       this.setState({
         mode: 'target'
       });
-      console.log(path);
       this.props.onUpdate({
         path: [
           ...path,

@@ -5,14 +5,14 @@ import Icon from './Icon';
 function ScaleAnchor(props) {
   let {boundingBox} = props;
   let style = {
-    marginTop: boundingBox.height + 5,
-    marginLeft: boundingBox.width + 5
+    marginTop: boundingBox.height,
+    marginLeft: boundingBox.width
   };
   let [anchorHovered, setAnchorHovered] = useState(false);
   return (
     <div style={{...styles.anchor,
-                 ...anchorHovered ? styles.anchorHovered : {},
                  ...styles.scaleAnchor,
+                 ...anchorHovered ? styles.anchorHovered : {},
                  ...style}}
          className={'resize-anchor'}
          onMouseOver={() => setAnchorHovered(true)}
@@ -28,8 +28,8 @@ function RotateAnchor(props) {
   let [anchorHovered, setAnchorHovered] = useState(false);
   return (
     <div style={{...styles.anchor,
-                 ...anchorHovered ? styles.anchorHovered : {},
                  ...styles.rotateAnchor,
+                 ...anchorHovered ? styles.anchorHovered : {},
                  ...style}}
          className={'rotate-anchor'}
          onMouseOver={() => setAnchorHovered(true)}
@@ -82,25 +82,25 @@ const styles = {
     'zIndex': 999999
   },
   anchor: {
-    'width': 10,
-    'height': 10
+    'width': 16,
+    'height': 16
   },
   anchorHovered: {
-    'borderColor': 'gray'
+    'background': '#03A9F4',
   },
   scaleAnchor: {
-    'marginTop': -3,
-    'borderRight': '2px solid #dedede',
-    'borderBottom': '2px solid #dedede',
+    'background': '#fff',
+    'border': '1px solid #fff',
+    'border-radius': 16,
     'position': 'absolute',
     'zIndex': -1
   },
   rotateAnchor: {
     'marginTop': -8,
-    'borderRight': '2px solid #dedede',
-    'borderTop': '2px solid #dedede',
+    'background': '#fff',
+    'border': '1px solid #fff',
+    'border-radius': 16,
     'position': 'absolute',
-    'borderTopRightRadius': 3,
     'zIndex': -1
   }
 };

@@ -1,6 +1,6 @@
 {
   "name": "@othree/react-designer",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Easy to configure, lightweight, editable vector graphics in your react components.",
   "main": "lib/index.js",
   "scripts": {
